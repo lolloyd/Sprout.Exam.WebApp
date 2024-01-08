@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sprout.Exam.Common.Constants
+﻿namespace Sprout.Exam.Common.Constants
 {
     public static class Constants
     {

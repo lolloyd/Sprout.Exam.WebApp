@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
-using Sprout.Exam.DataAccess.Repository.Models;
 using Sprout.Exam.DataAccess.Repository;
+using Sprout.Exam.DataAccess.Repository.Models;
+using System;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Sprout.Exam.WebApp.Data
 {
     public class DbContextWrapper : IDbContextWrapper
     {
         private readonly ApplicationDbContext _dbContext;
-        
+
         public DbContextWrapper(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;

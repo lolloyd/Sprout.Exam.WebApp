@@ -4,10 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Sprout.Exam.DataAccess.Repository.Models;
 using Sprout.Exam.WebApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sprout.Exam.WebApp.Data
 {

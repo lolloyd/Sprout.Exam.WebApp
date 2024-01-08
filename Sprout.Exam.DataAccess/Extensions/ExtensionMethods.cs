@@ -1,14 +1,12 @@
 ﻿using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.DataAccess.Repository.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sprout.Exam.DataAccess.Extensions
 {
     public static class ExtensionMethods
     {
-        public static Employee CopyFromDto(this Employee employee, CreateEmployeeDto dto) {
+        public static Employee CopyFromDto(this Employee employee, CreateEmployeeDto dto)
+        {
             employee.FullName = dto.FullName;
             employee.Birthdate = dto.Birthdate;
             employee.TIN = dto.Tin;

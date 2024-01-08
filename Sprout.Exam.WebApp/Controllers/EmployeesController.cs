@@ -1,18 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Sprout.Exam.Business.DataTransferObjects;
-using Sprout.Exam.Common.Enums;
 using Microsoft.Extensions.Logging;
-using Sprout.Exam.DataAccess.Services;
-using Sprout.Exam.WebApp.Models;
-using Sprout.Exam.WebApp.Helpers;
+using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.Business.Factory;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Sprout.Exam.Common.Enums;
+using Sprout.Exam.DataAccess.Services;
+using Sprout.Exam.WebApp.Helpers;
+using Sprout.Exam.WebApp.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace Sprout.Exam.WebApp.Controllers
 {

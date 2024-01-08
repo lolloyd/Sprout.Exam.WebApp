@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
 using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.DataAccess.Repository.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sprout.Exam.DataAccess.Helpers
 {

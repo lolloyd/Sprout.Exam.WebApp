@@ -18,7 +18,8 @@ namespace Sprout.Exam.DataAccess.Services
         private readonly ILogger<EmployeeService> _logger;
         private readonly IDbContextWrapper _dbContextWrapper;
         private readonly IMapper _mapper;
-        public  EmployeeService(ILogger<EmployeeService>  logger, IMapper mapper, IDbContextWrapper dbContextWrapper) {
+        public EmployeeService(ILogger<EmployeeService> logger, IMapper mapper, IDbContextWrapper dbContextWrapper)
+        {
             _dbContextWrapper = dbContextWrapper;
             _logger = logger;
             _mapper = mapper;
@@ -32,11 +33,12 @@ namespace Sprout.Exam.DataAccess.Services
                 var result = await _dbContextWrapper.AddAsync(employee.CopyFromDto(dto));
                 return new Response() { Id = result.Id, IsSuccess = true, Message = "Employee added successfully" };
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 _logger.LogError($"AddEmployee {e.Message}");
-                return new Response() {  IsSuccess = false, Message = $"AddEmployee {e.Message}" };
+                return new Response() { IsSuccess = false, Message = $"AddEmployee {e.Message}" };
             }
-            
+
         }
 
         public async Task<Response> ValidateExistingEmployee(CreateEmployeeDto dto)
@@ -46,10 +48,10 @@ namespace Sprout.Exam.DataAccess.Services
                 Employee employee = new Employee();
                 Expression<Func<Employee, bool>> predicate = employee => (employee.TIN == dto.Tin && employee.FullName == dto.FullName && employee.Birthdate == dto.Birthdate);
 
-                var result =  _dbContextWrapper.Find(predicate);
-                if(result.Any())
+                var result = _dbContextWrapper.Find(predicate);
+                if (result.Any())
                     return new Response() { IsSuccess = false, Message = "Employee is found in record" };
-                return new Response() { IsSuccess = true};
+                return new Response() { IsSuccess = true };
             }
             catch (Exception e)
             {
@@ -84,7 +86,8 @@ namespace Sprout.Exam.DataAccess.Services
                 Employee employee = new Employee();
                 employee = await _dbContextWrapper.GetByIdAsync<Employee>(id);
 
-                if (employee == null) {
+                if (employee == null)
+                {
                     _logger.LogError("Employee not found");
                     return new Response() { Id = id, IsSuccess = false, Message = "Employee not found" };
                 }
@@ -97,7 +100,7 @@ namespace Sprout.Exam.DataAccess.Services
                 _logger.LogError($"DeleteEmployee {e.Message}");
                 return new Response() { Id = id, IsSuccess = false, Message = $"DeleteEmployee {e.Message}" };
             }
-            
+
         }
 
         public async Task<List<EmployeeDto>> GetAllEmployee()

@@ -1,8 +1,6 @@
 ﻿using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.Common.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sprout.Exam.DataAccess.Services

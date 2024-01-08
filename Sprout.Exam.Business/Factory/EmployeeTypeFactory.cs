@@ -1,8 +1,6 @@
 ﻿using Sprout.Exam.Business.Services;
 using Sprout.Exam.Common.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sprout.Exam.Business.Factory
 {

@@ -1,7 +1,4 @@
-﻿using Sprout.Exam.Business.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace Sprout.Exam.Business.Services
 {

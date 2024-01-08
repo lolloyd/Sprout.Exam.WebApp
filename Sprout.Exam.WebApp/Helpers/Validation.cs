@@ -1,26 +1,24 @@
-﻿using Sprout.Exam.Common.Model;
-using System.Reflection.Metadata;
+﻿using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.Common.Constants;
-using Sprout.Exam.Business.DataTransferObjects;
-using Sprout.Exam.DataAccess.Repository.Models;
+using Sprout.Exam.Common.Model;
 using Sprout.Exam.DataAccess.Extensions;
-using Humanizer;
-using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
 using System;
+using System.Globalization;
 
 namespace Sprout.Exam.WebApp.Helpers
 {
     public static class Validation
     {
-        public static Response CalculateParams(decimal daysAbsent, decimal daysWorked) {
+        public static Response CalculateParams(decimal daysAbsent, decimal daysWorked)
+        {
             try
             {
-                if (daysAbsent > Constants.DaysInMonth || daysAbsent < 0  || daysWorked < 0)
+                if (daysAbsent > Constants.DaysInMonth || daysAbsent < 0 || daysWorked < 0)
                     return new Response() { IsSuccess = false, Message = "Invalid work info detected" };
-                
+
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 return new Response() { IsSuccess = false, Message = $"Error whwn validating calculate paramters {e.Message}" };
             }
             return new Response() { IsSuccess = true };
@@ -35,7 +33,7 @@ namespace Sprout.Exam.WebApp.Helpers
         public static Response EditEmployeeParams(EditEmployeeDto dto)
         {
 
-           var employeeDto = new EmployeeDto();
+            var employeeDto = new EmployeeDto();
             return EmployeeParams(employeeDto.CopyToEmployeeDto(dto));
         }
 
@@ -49,7 +47,7 @@ namespace Sprout.Exam.WebApp.Helpers
                     return new Response() { IsSuccess = false, Message = "FullName is required" };
                 }
 
-               
+
                 if (!DateTime.TryParse(employee.Birthdate.ToLongDateString(), out DateTime tempDoB))
                 {
                     return new Response() { IsSuccess = false, Message = "Invalid Birthdate format" };

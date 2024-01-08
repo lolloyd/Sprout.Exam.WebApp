@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sprout.Exam.Common.Model
+﻿namespace Sprout.Exam.Common.Model
 {
     public class Response
     {
