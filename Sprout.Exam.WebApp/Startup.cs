@@ -52,9 +52,9 @@ namespace Sprout.Exam.WebApp
             services.AddScoped<IEmployeeService, EmployeeService>();
 
             // Configure AutoMapper and create a mapping configuration
-            var mappingConfig = new MapperConfiguration(cfg =>
+            var mappingConfig = new MapperConfiguration(_ =>
             {
-                cfg.AddProfile<AutoMapperProfiles>();// Register your AutoMapper profiles here
+                _.AddProfile<AutoMapperProfiles>();// Register your AutoMapper profiles here
                                                      // Add other configurations or profiles as needed
             });
 
